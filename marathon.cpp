@@ -1,26 +1,51 @@
+// 프로그래머스 (완주하지 못한 선수)
 #include <string>
 #include <vector>
+#include <algorithm>
 #include <iostream>
-#include <sstream>
-#include <iterator>
 
 using namespace std;
+string solution(vector<string> p, vector<string> c);
 
 int main()
 {
-	vector<string> par = { "marina", "josipa", "nikola", "vinko", "filipa" };
-	vector<string> com = { "josipa", "filipa", "marina", "nikola" };
-	ostringstream vts;
-	copy(par.begin(), par.end(), ostream_iterator<string>(vts, ""));
-	string a = vts.str();
-	for (int i = 0; i < com.size(); i++)
+	vector <string> participant;
+	vector <string> completion;
+	int i, num;
+	string tmp;
+	cout << "마라톤 참가자 인원 : ";
+	cin >> num;
+	cout << "마라톤 참가자 명단" << endl;
+	for (i = 0; i < num; i++)
 	{
-		int j = a.find(com[i]);
-		cout << a << endl;
-		cout << j << "   " << com[i] << " " << com[i].length() << endl;
-		a.erase(j, com[i].length());
-		cout << a << endl << endl;
+		cin >> tmp;
+		participant.push_back(tmp);
 	}
-	cout << a << endl;
+	cout << "마라톤 완주자 명단" << endl;
+	for (i = 0; i < num - 1; i++)
+	{
+		cin >> tmp;
+		completion.push_back(tmp);
+	}
+	cout << "완주하지 못한 선수 : " << solution(participant, completion) << endl;;
 	return 0;
+}
+
+string solution(vector<string> participant, vector<string> completion) {
+	string answer = "";
+	sort(participant.begin(), participant.end());
+	sort(completion.begin(), completion.end());
+	int i = 0;
+	int n = completion.size();
+	for (i = 0; i < n; i++)
+	{
+		if (completion[i] != participant[i])
+		{
+			answer = participant[i];
+			break;
+		}
+	}
+	if (i == n)
+		answer = participant[n];
+	return answer;
 }
