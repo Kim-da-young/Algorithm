@@ -1,26 +1,25 @@
+// 프로그래머스 (완주하지 못한 선수)
 #include <string>
 #include <vector>
-#include <iostream>
-#include <sstream>
-#include <iterator>
+#include <algorithm>
 
 using namespace std;
 
-int main()
-{
-	vector<string> par = { "marina", "josipa", "nikola", "vinko", "filipa" };
-	vector<string> com = { "josipa", "filipa", "marina", "nikola" };
-	ostringstream vts;
-	copy(par.begin(), par.end(), ostream_iterator<string>(vts, ""));
-	string a = vts.str();
-	for (int i = 0; i < com.size(); i++)
+string solution(vector<string> participant, vector<string> completion) {
+	string answer = "";
+	sort(participant.begin(), participant.end());
+	sort(completion.begin(), completion.end());
+	int i = 0;
+	int n = completion.size();
+	for (i = 0; i < n; i++)
 	{
-		int j = a.find(com[i]);
-		cout << a << endl;
-		cout << j << "   " << com[i] << " " << com[i].length() << endl;
-		a.erase(j, com[i].length());
-		cout << a << endl << endl;
+		if (completion[i] != participant[i])
+		{
+			answer = participant[i];
+			break;
+		}
 	}
-	cout << a << endl;
-	return 0;
+	if (i == n)
+		answer = participant[n];
+	return answer;
 }
