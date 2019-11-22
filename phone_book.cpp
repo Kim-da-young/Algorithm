@@ -1,8 +1,33 @@
-// ���α׷��ӽ� (��ȭ��ȣ ���)
+// 프로그래머스 (전화번호 목록)
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iostream>
+
 using namespace std;
+bool solution(vector<string> phone_book);
+
+int main()
+{
+	vector<string> phone_book;
+	int i, num;
+	cout << "전화번호 수 : ";
+	cin >> num;
+	cout << "전화번호 목록" << endl;
+	for (i = 0; i < num; i++)
+	{
+		string tmp;
+		cin >> tmp;
+		phone_book.push_back(tmp);
+	}
+	bool answer = solution(phone_book);
+	cout << "한 번호가 다른 번호의 접두사인 경우가 ";
+	if (answer)
+		cout << "없음" << endl;
+	else
+		cout << "있음" << endl;
+	return 0;
+}
 
 bool solution(vector<string> phone_book) {
 	bool answer = true;
