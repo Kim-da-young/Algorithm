@@ -1,3 +1,4 @@
+// í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ (ìœ„ìž¥)
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -10,15 +11,15 @@ int solution(vector<vector<string>> clothes);
 int main()
 {
 	int i, num;
-	cout << "ÀÇ»óÀÇ ¼ö : ";
+	cout << "ì˜ìƒì˜ ìˆ˜ : ";
 	cin >> num;
 	vector<vector<string>> clothes(num, vector<string>(2));
-	cout << "ÀÇ»óÀÇ ÀÌ¸§ ÀÇ»óÀÇ Á¾·ù" << endl;
+	cout << "ì˜ìƒì˜ ì´ë¦„ ì˜ìƒì˜ ì¢…ë¥˜" << endl;
 	for (i = 0; i < num; i++)
 	{
 		cin >> clothes[i][0] >> clothes[i][1];
 	}
-	cout << "¼­·Î ´Ù¸¥ ¿ÊÀÇ Á¶ÇÕÀÇ ¼ö : " << solution(clothes) << endl;
+	cout << "ì„œë¡œ ë‹¤ë¥¸ ì˜·ì˜ ì¡°í•©ì˜ ìˆ˜ : " << solution(clothes) << endl;
 	return 0;
 }
 
