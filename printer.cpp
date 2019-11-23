@@ -1,12 +1,30 @@
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
+int solution(vector<int> priorities, int location);
+
+int main()
+{
+	int i, num, location;
+	cout << "문서 수 (num) : ";
+	cin >> num;
+	vector<int> priorities(num);
+	for (i = 0; i < num; i++)
+	{
+		cin >> priorities[i];
+	}
+	cout << "내 문서 위치 (0 ~ num-1) : ";
+	cin >> location;
+	cout << "내 문서는 " << solution(priorities, location) << " 번째로 인쇄";
+	return 0;
+}
 
 int solution(vector<int> priorities, int location) {
 	int answer = 0;
 	int cnt = 0;
-	int SameNumber;
+	int SameNumber = 0;
 	int i;
 	while (true)
 	{
