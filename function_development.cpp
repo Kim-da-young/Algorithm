@@ -1,4 +1,4 @@
-
+// í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ (ê¸°ëŠ¥ê°œë°œ)
 #include <string>
 #include <vector>
 #include <iostream>
@@ -9,16 +9,16 @@ vector<int> solution(vector<int> progresses, vector<int> speeds);
 int main()
 {
 	int i, num;
-	cout << "ÀÛ¾÷ÀÇ °³¼ö : ";
+	cout << "ìž‘ì—…ì˜ ê°œìˆ˜ : ";
 	cin >> num;
 	vector<int> progresses(num);
 	vector<int> speeds(num);
-	cout << "°¢ ÀÛ¾÷ÀÇ ÁøÇà Á¤µµ" << endl;
+	cout << "ê° ìž‘ì—…ì˜ ì§„í–‰ ì •ë„" << endl;
 	for (i = 0; i < num; i++)
 	{
 		cin >> progresses[i];
 	}
-	cout << "°¢ ÀÛ¾÷ÀÇ ÁøÇà ¼Óµµ" << endl;
+	cout << "ê° ìž‘ì—…ì˜ ì§„í–‰ ì†ë„" << endl;
 	for (i = 0; i < num; i++)
 	{
 		cin >> speeds[i];
