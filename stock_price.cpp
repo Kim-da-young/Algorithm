@@ -1,4 +1,4 @@
-// ÇÁ·Î±×·¡¸Ó½º (ÁÖ½Ä°¡°İ)
+// í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ (ì£¼ì‹ê°€ê²©)
 #include <string>
 #include <vector>
 #include <iostream>
@@ -9,10 +9,10 @@ vector<int> solution(vector<int> prices);
 int main()
 {
 	int i, num;
-	cout << "ÁÖ½Ä°¡°İ ¼ö : ";
+	cout << "ì£¼ì‹ ê´€ì°° ì‹œê°„ : ";
 	cin >> num;
 	vector<int> prices(num);
-	cout << "ÃÊ ´ÜÀ§ ÁÖ½Ä°¡°İ" << endl;
+	cout << "ì´ˆ ë‹¨ìœ„ ì£¼ì‹ê°€ê²©" << endl;
 	for (i = 0; i < num; i++)
 	{
 		cin >> prices[i];
